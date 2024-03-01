@@ -25,8 +25,16 @@ Route::get('/', function () {
 
 //single listing
 
-Route::get('/listing/{id}',function($id){
+// Route::get('/listing/{id}',function($id){
+//     return view('listing',[
+//         'listing' => Listing::find($id)
+//     ]);
+// });
+
+//Route Model Binding
+
+Route::get('/listing/{listing}',function(Listing $listing){
     return view('listing',[
-        'listing' => Listing::find($id)
+        'listing'=>$listing
     ]);
 });
