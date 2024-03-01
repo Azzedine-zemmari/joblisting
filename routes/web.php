@@ -14,10 +14,19 @@ use App\Models\Listing;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+//all listing
 
 Route::get('/', function () {
-    return view('listing', [
+    return view('listings', [
         'heading' => 'Latest Listings',
         'listings' => Listing::all()
+    ]);
+});
+
+//single listing
+
+Route::get('listing/{id}',function($id){
+    return view('listing',[
+        'listing' => Listing::find($id),
     ]);
 });
