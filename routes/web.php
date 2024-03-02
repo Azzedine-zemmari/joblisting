@@ -28,6 +28,7 @@ Route::get('/',[ListingController::class,'index']);
 // });
 
 //Route Model Binding
+Route::get('/listing/create',[ListingController::class,'create']);
 
 Route::get('/listing/{listing}',[ListingController::class,'show']);
 
@@ -39,3 +40,4 @@ Route::get('/listing/{listing}',[ListingController::class,'show']);
 //edit - show form to edit listing
 //update - Update listing
 //destroy - delete listing
+
