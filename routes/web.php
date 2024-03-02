@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ListingController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Request;
 use App\Models\Listing;
@@ -16,11 +17,7 @@ use App\Models\Listing;
 */
 //all listing
 
-Route::get('/', function () {
-    return view('listings', [
-        'listings' => Listing::all()
-    ]);
-});
+Route::get('/',[ListingController::class,'index']);
 
 //single listing
 
@@ -32,8 +29,13 @@ Route::get('/', function () {
 
 //Route Model Binding
 
-Route::get('/listing/{listing}',function(Listing $listing){
-    return view('listing',[
-        'listing'=>$listing
-    ]);
-});
+Route::get('/listing/{listing}',[ListingController::class,'show']);
+
+//common Resource Routes
+//index - Show all listings
+//show - show single listing
+//create - show form to create new listing
+//store - store new listing
+//edit - show form to edit listing
+//update - Update listing
+//destroy - delete listing
