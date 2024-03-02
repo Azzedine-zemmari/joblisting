@@ -27,9 +27,12 @@ Route::get('/',[ListingController::class,'index']);
 //     ]);
 // });
 
-//Route Model Binding
+//create listing
 Route::get('/listing/create',[ListingController::class,'create']);
+//store listing
+Route::post('/listing',[ListingController::class,'store']);
 
+//single listing 
 Route::get('/listing/{listing}',[ListingController::class,'show']);
 
 //common Resource Routes
