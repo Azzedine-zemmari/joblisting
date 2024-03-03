@@ -39,6 +39,8 @@ Route::get('/listing/{listing}/edit',[ListingController::class,'edit']);
 //update
 
 Route::put('/listing/{listing}',[ListingController::class,'update']);
+//destroy
+Route::delete('/listing/{listing}',[ListingController::class,'destroy']);
 
 //common Resource Routes
 //index - Show all listings
