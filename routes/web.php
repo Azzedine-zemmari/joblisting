@@ -32,8 +32,13 @@ Route::get('/listing/create',[ListingController::class,'create']);
 //store listing
 Route::post('/listing',[ListingController::class,'store']);
 
-//single listing 
-Route::get('/listing/{listing}',[ListingController::class,'show']);
+
+//edit listing
+Route::get('/listing/{listing}/edit',[ListingController::class,'edit']);
+
+//update
+
+Route::put('/listing/{listing}',[ListingController::class,'update']);
 
 //common Resource Routes
 //index - Show all listings
@@ -44,3 +49,6 @@ Route::get('/listing/{listing}',[ListingController::class,'show']);
 //update - Update listing
 //destroy - delete listing
 
+
+//single listing 
+Route::get('/listing/{listing}',[ListingController::class,'show']);
