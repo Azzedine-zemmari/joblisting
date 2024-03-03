@@ -36,6 +36,10 @@ class ListingController extends Controller
             'tags'=>'required',
             'description'=>'required'
         ]);
+        if($request->hasFile('logo')){
+            $formFields['logo']= $request->file('logo')->store('logos','public');
+        }
+        //after this i run this command to make image accessible in public folder php artisan storage:link
         Listing::create($formFields);
         
 
