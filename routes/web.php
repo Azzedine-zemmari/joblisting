@@ -47,6 +47,9 @@ Route::delete('/listing/{listing}',[ListingController::class,'destroy']);
 Route::get('/register',[UserController::class,'create']);
 //store user
 Route::post('/users',[UserController::class,'store']);
+
+//Log user out
+Route::post('/logout',[UserController::class,'logout']);
 //common Resource Routes
 //index - Show all listings
 //show - show single listing
