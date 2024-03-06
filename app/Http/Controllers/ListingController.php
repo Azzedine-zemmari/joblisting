@@ -39,6 +39,8 @@ class ListingController extends Controller
         if($request->hasFile('logo')){
             $formFields['logo']= $request->file('logo')->store('logos','public');
         }
+        //add ownerShip to listings
+        $formFields['user_id'] = auth()->id();
         //after this i run this command to make image accessible in public folder php artisan storage:link
         Listing::create($formFields);
         
