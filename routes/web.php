@@ -49,6 +49,8 @@ Route::get('/login',[UserController::class,'login'])->name('login')->middleware(
 
 //login user
 Route::post('/users/authenticate',[UserController::class,'authenticate']);
+
+Route::get('/listings/manage',[ListingController::class,'manage'])->middleware('auth');
 //common Resource Routes
 //index - Show all listings
 //show - show single listing
